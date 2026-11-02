@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b12">
+<title>Akshansh — Digital Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--bg:#090b12;--panel:#111521;--panel2:#151b2a;--ink:#f4f6ff;--muted:#9aa4bb;--line:rgba(255,255,255,.11);--lime:#c7f36b;--cyan:#72e4df;--violet:#a99aff;--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 12% 10%,rgba(114,228,223,.12),transparent 33%),radial-gradient(ellipse at 88% 20%,rgba(169,154,255,.13),transparent 32%),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,auto,44px 44px,44px 44px}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 44px));margin:auto}.mono{font-family:"DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;font-size:11px;color:var(--muted)}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.04em}.brand-mark{width:34px;height:34px;border-radius:11px;background:var(--lime);color:#10140a;display:grid;place-items:center;font-weight:900}.navlinks{display:flex;gap:27px;color:var(--muted);font-size:13px}.navlinks a:hover{color:var(--lime)}.nav-cta{border:1px solid var(--line);padding:11px 16px;border-radius:99px;font-size:12px}
+.hero{min-height:670px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:40px;padding:70px 0 80px}.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:99px;padding:9px 13px;color:var(--muted);font:11px "DM Mono",monospace;text-transform:uppercase}.dot{width:7px;height:7px;background:var(--lime);border-radius:50%;box-shadow:0 0 14px var(--lime)}h1{font-size:clamp(48px,7vw,88px);line-height:.99;letter-spacing:-.075em;margin:26px 0 22px;font-weight:800}h1 .accent{color:var(--lime)}.intro{max-width:550px;color:var(--muted);font-size:16px;line-height:1.85}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{padding:14px 19px;border-radius:12px;font-size:13px;font-weight:800;display:inline-flex;align-items:center;gap:10px;transition:.2s}.btn:hover{transform:translateY(-3px)}.primary{background:var(--lime);color:#11160b}.secondary{border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.visual{height:480px;position:relative;display:grid;place-items:center}.orbit{position:absolute;width:390px;height:390px;border:1px solid rgba(255,255,255,.13);border-radius:50%;animation:spin 28s linear infinite}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.1);border-radius:50%;inset:35px}.orbit:after{inset:80px}@keyframes spin{to{transform:rotate(360deg)}}.core{width:250px;height:300px;border-radius:32px;background:linear-gradient(145deg,#202b3b,#101521 65%);border:1px solid rgba(255,255,255,.2);box-shadow:0 30px 90px #0009;position:relative;overflow:hidden;padding:22px;transform:rotate(-5deg)}.core:before{content:"";position:absolute;width:230px;height:230px;background:radial-gradient(circle,var(--cyan),transparent 68%);opacity:.24;right:-100px;top:-100px}.core-top{display:flex;justify-content:space-between;align-items:center}.mini-logo{width:31px;height:31px;background:var(--lime);color:#111;display:grid;place-items:center;border-radius:9px;font-weight:900}.core-title{margin-top:55px;font-size:28px;font-weight:800;letter-spacing:-.06em;line-height:1.05}.core-title span{color:var(--lime)}.core-lines{margin-top:18px;display:grid;gap:8px}.core-lines i{height:5px;border-radius:9px;background:#ffffff22}.core-lines i:nth-child(1){width:88%}.core-lines i:nth-child(2){width:65%}.core-lines i:nth-child(3){width:76%}.float{position:absolute;background:#171e2c;border:1px solid var(--line);border-radius:14px;padding:13px 16px;box-shadow:0 16px 35px #0006}.float strong{display:block;font-size:13px}.float small{color:var(--muted);font-size:10px}.f1{top:62px;right:0}.f2{bottom:62px;left:0}.f3{bottom:10px;right:30px;color:var(--lime);font:12px "DM Mono",monospace}
+section{padding:85px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:34px;gap:20px}.section-head h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.06em;margin:9px 0 0}.section-head p{color:var(--muted);max-width:370px;font-size:13px;line-height:1.7;margin:0}.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}.about-card,.stat-card,.project,.stack-card,.contact-card{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:var(--radius)}.about-card{padding:30px}.about-card p{color:var(--muted);line-height:1.9;font-size:14px;margin:0}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat-card{padding:23px;display:flex;flex-direction:column;justify-content:space-between;min-height:135px}.stat-card b{font-size:25px;letter-spacing:-.05em}.stat-card span{font-size:11px;color:var(--muted)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.project{overflow:hidden;transition:.25s}.project:hover{transform:translateY(-6px);border-color:rgba(199,243,107,.45)}.project-art{height:185px;position:relative;overflow:hidden;background:#141c2a;display:grid;place-items:center}.project-art:before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;filter:blur(2px);background:var(--art,rgba(114,228,223,.35));opacity:.55;right:-40px;top:-70px}.mock-window{width:76%;height:115px;border:1px solid #ffffff44;border-radius:10px;background:#0d121ddd;position:relative;padding:12px;box-shadow:0 20px 40px #0008;transform:rotate(-4deg)}.mock-dots{display:flex;gap:4px}.mock-dots i{width:5px;height:5px;border-radius:50%;background:#ffffff66}.mock-chart{height:58px;margin-top:12px;display:flex;align-items:end;gap:6px}.mock-chart i{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(var(--lime),#72e4df);height:var(--h)}.project-info{padding:21px}.project-info h3{margin:0 0 9px;font-size:17px;letter-spacing:-.04em}.project-info p{margin:0;color:var(--muted);font-size:12px;line-height:1.7;min-height:42px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.tag{font:10px "DM Mono",monospace;color:#d5dbea;border:1px solid var(--line);padding:6px 8px;border-radius:6px}.project-link{display:inline-block;margin-top:18px;color:var(--lime);font-size:11px;font-weight:800}
+.stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stack-card{padding:19px;min-height:115px}.stack-card b{display:block;font-size:14px;margin:15px 0 5px}.stack-card span{color:var(--muted);font-size:11px}.stack-icon{width:32px;height:32px;border-radius:9px;background:#ffffff0d;display:grid;place-items:center;color:var(--lime);font:13px "DM Mono",monospace}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{border-top:1px solid var(--line);padding:20px 12px 0 0}.step-num{font:11px "DM Mono",monospace;color:var(--lime)}.step h3{font-size:15px;margin:14px 0 8px}.step p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}
+.contact-card{padding:40px;display:flex;justify-content:space-between;align-items:center;gap:30px;background:radial-gradient(circle at 90% 10%,rgba(199,243,107,.12),transparent 35%),#111521}.contact-card h2{font-size:clamp(28px,4vw,46px);letter-spacing:-.06em;margin:10px 0}.contact-card p{color:var(--muted);font-size:13px;line-height:1.7;max-width:500px}.contact-links{display:flex;flex-direction:column;gap:10px;min-width:170px}.contact-links a{padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:12px}.contact-links a:hover{border-color:var(--lime);color:var(--lime)}
+footer{padding:28px 0 38px;display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:11px}.backtop{color:var(--lime)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:65px}.visual{height:400px}.about-grid{grid-template-columns:1fr}.projects{grid-template-columns:repeat(2,1fr)}.stack-grid{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.wrap{width:min(100% - 30px,1160px)}nav{height:68px}.navlinks{display:none}.hero{min-height:auto;padding:65px 0 55px}.visual{height:350px}.orbit{width:300px;height:300px}.core{width:210px;height:255px}.core-title{margin-top:35px;font-size:24px}.f1{right:-2px;top:20px}.f2{left:-2px;bottom:25px}.f3{right:0;bottom:0}.section-head{display:block}.section-head p{margin-top:15px}.projects{grid-template-columns:1fr}.project-art{height:200px}.stack-grid{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr}.contact-card{padding:26px;display:block}.contact-links{margin-top:24px}footer{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="#home"><span class="brand-mark">A.</span><span>AKSHANSH<span style="color:var(--lime)">/</span></span></a>
+  <div class="navlinks"><a href="#about">About</a><a href="#projects">Projects</a><a href="#stack">Tech stack</a><a href="#contact">Contact</a></div>
+  <a class="nav-cta" href="#contact">LET'S CONNECT ↗</a>
+</nav>
+
+<main>
+<section class="hero" id="home" style="border:0">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> STUDENT DEVELOPER · BUILDING IN PUBLIC</div>
+    <h1>Ideas into<br><span class="accent">interfaces.</span></h1>
+    <p class="intro">Hey, I'm <strong style="color:var(--ink)">Akshansh</strong> — a student developer exploring the world of code, creative technology and AI-assisted building. I enjoy turning curious ideas into useful digital experiences, one iteration at a time.</p>
+    <div class="actions"><a class="btn primary" href="#projects">Explore my work <span>↘</span></a><a class="btn secondary" href="#about">More about me <span>↗</span></a></div>
+  </div>
+  <div class="visual" aria-label="Abstract portfolio illustration">
+    <div class="orbit"></div>
+    <div class="core">
+      <div class="core-top"><span class="mini-logo">A.</span><span class="mono">PORTFOLIO_01</span></div>
+      <div class="core-title">CREATE.<br><span>BUILD.</span><br>REPEAT.</div>
+      <div class="core-lines"><i></i><i></i><i></i></div>
+      <div class="mono" style="position:absolute;bottom:20px">CURIOSITY → CODE</div>
+    </div>
+    <div class="float f1"><strong>Creative mindset</strong><small>Ideas · Experiments · Iteration</small></div>
+    <div class="float f2"><strong>Currently learning</strong><small>Python & product building</small></div>
+    <div class="f3">{" hello_world "}</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-head reveal"><div><div class="mono">01 / THE PERSON</div><h2>A little about me.</h2></div><p>Curiosity first. Learn by making. Improve with every version.</p></div>
+  <div class="about-grid reveal">
+    <div class="about-card"><p>I'm a student developer at the beginning of my software-building journey. I'm developing my foundations in programming, learning how applications work, and experimenting with AI tools to bring ideas to life. I believe the best way to learn is to build something, test it, understand what breaks, and make it better.</p><br><p>This portfolio is my evolving workspace — a place to document projects, share experiments and show the process behind what I create.</p></div>
+    <div class="stats">
+      <div class="stat-card"><span class="mono">MINDSET</span><b>Learn → Build</b><span>Progress through practice</span></div>
+      <div class="stat-card"><span class="mono">FOCUS</span><b>Python</b><span>Programming foundations</span></div>
+      <div class="stat-card"><span class="mono">METHOD</span><b>Iterate</b><span>Test, debug, improve</span></div>
+      <div class="stat-card"><span class="mono">INTEREST</span><b>AI + Web</b><span>Creative digital products</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-head reveal"><div><div class="mono">02 / SELECTED WORK</div><h2>Things I'm building.</h2></div><p>A project shelf ready for your real builds. Replace the sample concepts with your live projects as you publish them.</p></div>
+  <div class="projects">
+    <article class="project reveal"><div class="project-art" style="--art:rgba(114,228,223,.5)"><div class="mock-window"><div class="mock-dots"><i></i><i></i><i></i></div><div class="mock-chart"><i style="--h:38%"></i><i style="--h:62%"></i><i style="--h:48%"></i><i style="--h:85%"></i><i style="--h:70%"></i><i style="--h:100%"></i></div></div></div><div class="project-info"><h3>01 — Smart Expense Tracker</h3><p>A dashboard concept to organise spending, view categories and understand monthly patterns.</p><div class="tags"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">UI DESIGN</span></div><a class="project-link" href="#contact">PROJECT LINK COMING SOON ↗</a></div></article>
+    <article class="project reveal"><div class="project-art" style="--art:rgba(169,154,255,.55)"><div class="mock-window" style="transform:rotate(4deg);height:125px"><div class="mock-dots"><i></i><i></i><i></i></div><div style="font-size:10px;color:#c7f36b;margin-top:16px;font-family:monospace">YOUR NEXT STUDY SESSION</div><div style="height:8px;border-radius:8px;background:#ffffff20;margin-top:10px"><div style="width:68%;height:100%;background:#a99aff;border-radius:8px"></div></div><div style="font-size:9px;color:#aaa;margin-top:7px">FOCUS MODE / 68%</div></div></div><div class="project-info"><h3>02 — AI Study Companion</h3><p>A learning assistant concept for organising topics, revision plans and study resources.</p><div class="tags"><span class="tag">AI CONCEPT</span><span class="tag">PRODUCT</span><span class="tag">WEB</span></div><a class="project-link" href="#contact">PROJECT LINK COMING SOON ↗</a></div></article>
+    <article class="project reveal"><div class="project-art" style="--art:rgba(199,243,107,.42)"><div class="mock-window" style="transform:rotate(-2deg);height:125px"><div class="mock-dots"><i></i><i></i><i></i></div><div style="display:flex;gap:8px;margin-top:17px"><div style="width:35px;height:55px;border-radius:6px;background:#c7f36b33"></div><div style="flex:1"><div style="height:6px;width:85%;background:#ffffff55;border-radius:4px;margin:5px 0"></div><div style="height:6px;width:60%;background:#ffffff33;border-radius:4px;margin:9px 0"></div><div style="height:19px;width:55%;background:#c7f36b;border-radius:5px;margin-top:12px"></div></div></div></div></div><div class="project-info"><h3>03 — Personal Portfolio</h3><p>This responsive portfolio: a central place to present skills, experiments and future projects.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">RESPONSIVE</span></div><a class="project-link" href="#home">YOU'RE HERE ↗</a></div></article>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="section-head reveal"><div><div class="mono">03 / TOOLKIT</div><h2>My current toolkit.</h2></div><p>Tools and technologies I'm learning and exploring. This list is intentionally honest and can grow with experience.</p></div>
+  <div class="stack-grid reveal">
+    <div class="stack-card"><div class="stack-icon">Py</div><b>Python</b><span>Programming foundations</span></div>
+    <div class="stack-card"><div class="stack-icon">HTML</div><b>HTML & CSS</b><span>Web structure and styling</span></div>
+    <div class="stack-card"><div class="stack-icon">JS</div><b>JavaScript</b><span>Interactive web experiences</span></div>
+    <div class="stack-card"><div class="stack-icon">AI</div><b>AI coding tools</b><span>Prompt, generate, review</span></div>
+    <div class="stack-card"><div class="stack-icon">GH</div><b>GitHub</b><span>Version control & sharing</span></div>
+    <div class="stack-card"><div class="stack-icon">UI</div><b>UI / UX</b><span>Layout and user experience</span></div>
+    <div class="stack-card"><div class="stack-icon">CLI</div><b>Terminal</b><span>Command-line basics</span></div>
+    <div class="stack-card"><div class="stack-icon">WEB</div><b>Deployment</b><span>Learning to ship projects</span></div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="section-head reveal"><div><div class="mono">04 / HOW I WORK</div><h2>From prompt to product.</h2></div><p>My approach to vibe coding: use AI as a collaborator, not a replacement for understanding.</p></div>
+  <div class="process reveal">
+    <div class="step"><span class="step-num">STEP_01</span><h3>Define the idea</h3><p>Clarify the problem, audience and smallest useful version.</p></div>
+    <div class="step"><span class="step-num">STEP_02</span><h3>Build with AI</h3><p>Use clear prompts, inspect the generated code and shape the experience.</p></div>
+    <div class="step"><span class="step-num">STEP_03</span><h3>Test & refine</h3><p>Try real interactions, find bugs and improve the details.</p></div>
+    <div class="step"><span class="step-num">STEP_04</span><h3>Ship & learn</h3><p>Deploy the project, document it and use feedback for the next version.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-card reveal">
+    <div><div class="mono">05 / SAY HELLO</div><h2>Have an idea?<br>Let's make it real.</h2><p>I'm open to learning, collaborating and connecting with people who enjoy building useful things. Add your real contact links below before publishing.</p></div>
+    <div class="contact-links"><a href="mailto:your.email@example.com">✉ Email me ↗</a><a href="https://github.com/" target="_blank" rel="noreferrer">⌘ GitHub ↗</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">in LinkedIn ↗</a></div>
+  </div>
+</section>
+</main>
+<footer><span>© <span id="year"></span> AKSHANSH. BUILT WITH CURIOSITY.</span><a class="backtop" href="#home">BACK TO TOP ↑</a></footer>
+</div>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
